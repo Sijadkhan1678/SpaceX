@@ -1,0 +1,18 @@
+
+   query  getLaunches {
+        launches {
+            
+            launch_success
+            launch_year
+            mission_name
+            rocket {
+              rocket_name
+            }
+            links {
+              flickr_images
+              video_link
+            }  
+            
+            } 
+     }
+   
