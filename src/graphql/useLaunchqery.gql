@@ -1,7 +1,7 @@
 
 
   
-       query getLaunch ($id: String!)  {
+       query GetLaunch ($id: String!)  {
         launch(id: $id) {
    
             launch_success

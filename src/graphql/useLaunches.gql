@@ -1,5 +1,5 @@
 
-   query  getLaunches {
+   query GetLaunches  {
         launches {
             
             launch_success

@@ -2,7 +2,7 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
-  // overwrite: true,
+  overwrite: true,
   schema: "https://spacexdata.herokuapp.com/graphql",
   documents: "**/*.{gql,graphql}",
   generates: {
