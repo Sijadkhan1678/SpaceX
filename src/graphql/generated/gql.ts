@@ -13,14 +13,14 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel-plugin for production.
  */
 const documents = {
-    "query GetLaunches {\n  launches {\n    launch_success\n    launch_year\n    mission_name\n    rocket {\n      rocket_name\n    }\n    links {\n      flickr_images\n      video_link\n    }\n  }\n}": types.GetLaunchesDocument,
+    "query GetLaunches {\n  launches {\n    flight_number\n    launch_success\n    launch_year\n    mission_name\n    rocket {\n      rocket_name\n    }\n  }\n}": types.GetLaunchesDocument,
     "query GetLaunch($id: String!) {\n  launch(id: $id) {\n    launch_success\n    launch_year\n    mission_name\n    rocket {\n      rocket_name\n    }\n    details\n    links {\n      flickr_images\n    }\n  }\n}": types.GetLaunchDocument,
 };
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "query GetLaunches {\n  launches {\n    launch_success\n    launch_year\n    mission_name\n    rocket {\n      rocket_name\n    }\n    links {\n      flickr_images\n      video_link\n    }\n  }\n}"): (typeof documents)["query GetLaunches {\n  launches {\n    launch_success\n    launch_year\n    mission_name\n    rocket {\n      rocket_name\n    }\n    links {\n      flickr_images\n      video_link\n    }\n  }\n}"];
+export function graphql(source: "query GetLaunches {\n  launches {\n    flight_number\n    launch_success\n    launch_year\n    mission_name\n    rocket {\n      rocket_name\n    }\n  }\n}"): (typeof documents)["query GetLaunches {\n  launches {\n    flight_number\n    launch_success\n    launch_year\n    mission_name\n    rocket {\n      rocket_name\n    }\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

@@ -6,7 +6,7 @@ import App from './App';
 
 
 const client = new ApolloClient({
-    uri: 'https://spacexdata.herokuapp.com/graphql',
+    uri: 'https://api.spacex.land/graphql',
     cache: new InMemoryCache()
 
 })

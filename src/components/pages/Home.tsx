@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Launches from '../launches/LaunchItem'
+import Launches from '../launches/Launches'
 
 const Home = () =>{
   return(
