@@ -10,11 +10,12 @@ export const Navbar = () => {
           width: '80px'
         }} />
         <ul>
-        {/* <NavLink className={(isActive)=>isActive ? 'active': 'un-active'} to='/'>Home</NavLink> */}
+        
         <NavLink style={style}  to='/'>Home</NavLink>
+        
         <NavLink style={style} to='/about'>About</NavLink>
 
-        {/* <NavLink className={(isActive)=> isActive ? 'active':'un-active'} to='/about'>About</NavLink> */}
+        
         </ul>
       
      </nav>
