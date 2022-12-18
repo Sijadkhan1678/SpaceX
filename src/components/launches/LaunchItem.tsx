@@ -8,7 +8,7 @@ const LaunchItem:FC<LaunchQuery>  = ({launch}) => {
 
     // props.data
     // launch?.flight_number
-    console.log("image",launch?.links?.flickr_images)
+   // console.log("image",launch?.links?.flickr_images)
     return (
     
         
@@ -18,7 +18,7 @@ const LaunchItem:FC<LaunchQuery>  = ({launch}) => {
 
                <div className='content-item'>
                <h4>{ launch?.mission_name && launch.mission_name}</h4> 
-                <p>{launch?.launch_success}</p>
+                <p className={launch?.launch_success ? 'success':'failed'}>{launch?.launch_success ? "Success":"Failed"}</p>
                 
 
                </div>

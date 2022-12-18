@@ -22,11 +22,19 @@ nav{
   margin-left: 3rem;
   
 }
-/* .active{
+ .active{
+
+  text-decoration: none;
+   /* border-bottom: 2px solid gray; */
+    color: 'white';
+  text-decoration: none;
+  
+  border-bottom:2px solid white
+}
+.un-active {
   color: white;
   text-decoration: none;
-   border-bottom: 2px solid gray;
-} */
+} 
 ul{
   width: 30%;
   display: flex;
@@ -35,6 +43,7 @@ ul{
   
   justify-content: space-around;
 }
+
 .container {
   margin: 0 3rem;
   font-size: .8rem;

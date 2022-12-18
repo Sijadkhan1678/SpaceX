@@ -10,10 +10,11 @@ export const Navbar = () => {
           width: '80px'
         }} />
         <ul>
-        {/* <NavLink className={(isActive)=>isActive ? 'active': ' '} to='/'>Home</NavLink> */}
-        <NavLink style={style} to='/'>Home</NavLink>
-
+        {/* <NavLink className={(isActive)=>isActive ? 'active': 'un-active'} to='/'>Home</NavLink> */}
+        <NavLink style={style}  to='/'>Home</NavLink>
         <NavLink style={style} to='/about'>About</NavLink>
+
+        {/* <NavLink className={(isActive)=> isActive ? 'active':'un-active'} to='/about'>About</NavLink> */}
         </ul>
       
      </nav>
@@ -23,10 +24,11 @@ export const Navbar = () => {
   )
 }
 const style = ({isActive}:any) => {
-  console.log('isactive',isActive)
+  // console.log('isactive',isActive)
   return{
+
        color: 'white',
-       borderBottom: isActive === true ? "2px solid white": '',
+       borderBottom: isActive === true ? '2px solid white': '',
        textDecoration:"none"
 
   }
