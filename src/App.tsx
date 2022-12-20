@@ -17,6 +17,7 @@ const App:FC = () =>  {
     <Routes>
      
       <Route path='/' element={<Home />} />
+      <Route path='launch/:id' element={<Launch />}  />   
       <Route path='about' element={<About />} />
       
        </Routes>

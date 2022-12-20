@@ -743,9 +743,9 @@ export type TrunkCargo = {
 export type GetLaunchesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetLaunchesQuery = { __typename?: 'Query', launches?: Array<{ __typename?: 'Launch', id?: string, launch_success?: boolean | null, launch_year?: number | null, mission_name?: string | null, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null },links?: { __typename?: 'LaunchLinks', flickr_images?: Array<string | null> | null } | null } | undefined> | null };
+export type GetLaunchesQuery = { __typename?: 'Query', launches?: Array<{ __typename?: 'Launch', id?: string | number | undefined, launch_success?: boolean | null, launch_year?: number | null, mission_name?: string | null, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null },links?: { __typename?: 'LaunchLinks', flickr_images?: Array<string | null> | null } | null } | undefined> | null };
 
-export type LaunchQuery = { __typename?: 'Query', launch?: { __typename?: 'Launch', flight_number?: number | null, links?: { __typename?: 'LaunchLinks', flickr_images?: Array<string | null> | null }, launch_success?: boolean | null, launch_year?: number | null, mission_name?: string | null, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null } | null }  | null };
+export type LaunchQuery = { __typename?: 'Query', launch?: { __typename?: 'Launch', id?: number | string | null, links?: { __typename?: 'LaunchLinks', flickr_images?: Array<string | null> | null }, launch_success?: boolean | null, launch_year?: number | null, mission_name?: string | null, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null } | null }  | null };
 
 
 export type GetLaunchQueryVariables = Exact<{
@@ -753,7 +753,7 @@ export type GetLaunchQueryVariables = Exact<{
 }>;
 
 
-export type GetLaunchQuery = { __typename?: 'Query', launch?: { __typename?: 'Launch', launch_success?: boolean | null, launch_year?: number | null, mission_name?: string | null, details?: string | null, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null } | null, links?: { __typename?: 'LaunchLinks', flickr_images?: Array<string | null> | null } | null } | null };
+export type GetLaunchQuery = { __typename?: 'Query', launch?: { __typename?: 'Launch',id?: number | string | undefined, launch_success?: boolean | null, launch_year?: number | null, mission_name?: string | null, details?: string | null, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null } | null, links?: { __typename?: 'LaunchLinks', flickr_images?: Array<string | null> | null } | null } | null };
 
 // export type LaunchQuery = { __typename?: 'Query', launch?: { __typename?: 'Launch', launch_success?: boolean | null, launch_year?: number | null, mission_name?: string | null, details?: string | null, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null } | null, links?: { __typename?: 'LaunchLinks', flickr_images?: Array<string | null> | null } | null } | null };
 
@@ -804,8 +804,9 @@ export type GetLaunchesQueryHookResult = ReturnType<typeof useGetLaunchesQuery>;
 export type GetLaunchesLazyQueryHookResult = ReturnType<typeof useGetLaunchesLazyQuery>;
 export type GetLaunchesQueryResult = Apollo.QueryResult<GetLaunchesQuery, GetLaunchesQueryVariables>;
 export const GetLaunchDocument = gql`
-    query GetLaunch($id: String!) {
+    query GetLaunch($id: String) {
   launch(id: $id) {
+    id
     launch_success
     launch_year
     mission_name
